@@ -1,0 +1,18 @@
+{
+  "name": "pack-b",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./dev.js"
+  },
+  "peerDependencies": {
+    "pack-a": "^1.0.0"
+  },
+  "devDependencies": {
+    "pack-a": "workspace:*"
+  }
+}

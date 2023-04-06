@@ -1,0 +1,42 @@
+{
+  "name": "vue-components-monorepo",
+  "private": true,
+  "packageManager": "pnpm@7.29.0",
+  "keywords": [],
+  "homepage": "https://github.com/supanpanCn/Monorepo#readme",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "dev": "pnpm -r --parallel --filter='./packages/*' run dev",
+    "build": "",
+    "release": "",
+    "publish": "",
+    "format": "prettier --write --cache .",
+    "lint": "eslint --cache ."
+  },
+  "devDependencies": {
+    "@vue-components-monorepo/eslint-config": "workspace:*",
+    "eslint": "^8.37.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "simple-git-hooks": "^2.8.1"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "lodash": "^4.17.21"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --cache --ignore-unknown"
+    ],
+    "*.{vue,js,ts,jsx,tsx,md,json}": [
+      "pnpm run lint"
+    ]
+  }
+}

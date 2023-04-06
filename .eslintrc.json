@@ -1,0 +1,4 @@
+{
+  "root": true,
+  "extends": ["@vue-components-monorepo/eslint-config"]
+}
